@@ -1,0 +1,108 @@
+/* Basic Variables for Easy Theme Management */
+:root {
+  --bg-color: #282c34;
+  --primary-color: #61dafb;
+  --light-color: #ffffff;
+  --dark-color: #212529;
+  --accent-color: #ffc107;
+  --btn-bg-color: #4CAF50;
+  --btn-hover-color: #45a049;
+  --display-bg-color: #666;
+  --display-color: #fff;
+  --border-radius: 8px;
+  --transition-speed: 0.3s;
+}
+
+/* General Body Styles */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-color);
+  color: var(--light-color);
+}
+
+/* Centering the Calculator on the Page Vertically and Horizontally */
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+}
+
+/* Calculator Body Styling */
+.calculator-body {
+  background: var(--dark-color);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 360px;
+}
+
+/* Display Component Styles */
+.display {
+  background: var(--display-bg-color);
+  color: var(--display-color);
+  font-size: 2em;
+  padding: 0.5em 1em;
+  text-align: right;
+  border-radius: var(--border-radius);
+  margin-bottom: 20px;
+  transition: background-color var(--transition-speed);
+}
+
+/* Button Styles */
+.button-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  background-color: var(--btn-bg-color);
+  border: none;
+  color: var(--light-color);
+  padding: 20px;
+  font-size: 1.25em;
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px rgba(0,0,0,0.15);
+  transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+button:hover {
+  background-color: var(--btn-hover-color);
+  transform: translateY(-3px);
+}
+
+/* Animations for Button Press */
+button:active {
+  background-color: var(--accent-color);
+  box-shadow: 0 2px rgba(0,0,0,0.1);
+  transform: translateY(-1px);
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+  .calculator-body {
+    padding: 10px;
+  }
+
+  button {
+    padding: 15px;
+  }
+}
+
+/* Transition Effects for Display Changes */
+.display {
+  transition: all 0.5s ease-in-out;
+}
+
+.display:focus-within {
+  background-color: var(--primary-color);
+  color: var(--dark-color);
+}
