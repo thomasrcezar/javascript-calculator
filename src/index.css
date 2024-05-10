@@ -1,108 +1,86 @@
-/* Basic Variables for Easy Theme Management */
 :root {
   --bg-color: #282c34;
-  --primary-color: #61dafb;
-  --light-color: #ffffff;
-  --dark-color: #212529;
-  --accent-color: #ffc107;
-  --btn-bg-color: #4CAF50;
-  --btn-hover-color: #45a049;
-  --display-bg-color: #666;
-  --display-color: #fff;
+  --display-bg-color: #3c404d;
+  --button-bg-color: #61dafb;
+  --button-hover-color: #53c8ea;
+  --button-active-transform: scale(0.95);
+  --button-text-color: white;
   --border-radius: 8px;
-  --transition-speed: 0.3s;
+  --shadow-strong: 0 4px 10px rgba(0, 0, 0, 0.3);
+  --font-family: 'Roboto', sans-serif;
+  --font-size-large: 1.5em;
+  --font-size-display: 2em;
+  --spacing-small: 10px;
+  --spacing-medium: 20px;
 }
 
-/* General Body Styles */
-body {
+body, html {
+  height: 100%;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: var(--bg-color);
-  color: var(--light-color);
-}
-
-/* Centering the Calculator on the Page Vertically and Horizontally */
-.App {
+  font-family: var(--font-family);
+  background: var(--bg-color);
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background-color: var(--bg-color);
+  color: var(--button-text-color);
 }
 
-/* Calculator Body Styling */
-.calculator-body {
-  background: var(--dark-color);
-  padding: 20px;
+#calculator {
+  background-color: #222;
+  padding: var(--spacing-medium);
   border-radius: var(--border-radius);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  width: 100%;
-  max-width: 360px;
+  box-shadow: var(--shadow-strong);
+  width: auto;
 }
 
-/* Display Component Styles */
-.display {
-  background: var(--display-bg-color);
-  color: var(--display-color);
-  font-size: 2em;
-  padding: 0.5em 1em;
+#display {
+  background-color: var(--display-bg-color);
+  color: var(--button-text-color);
+  font-size: var(--font-size-display);
+  padding: var(--spacing-small);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-small);
   text-align: right;
-  border-radius: var(--border-radius);
-  margin-bottom: 20px;
-  transition: background-color var(--transition-speed);
 }
 
-/* Button Styles */
-.button-row {
+#button-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  gap: var(--spacing-small);
 }
 
 button {
-  background-color: var(--btn-bg-color);
+  background-color: var(--button-bg-color);
   border: none;
-  color: var(--light-color);
-  padding: 20px;
-  font-size: 1.25em;
+  color: var(--button-text-color);
+  padding: 15px;
+  font-size: var(--font-size-large);
   border-radius: var(--border-radius);
-  box-shadow: 0 4px rgba(0,0,0,0.15);
-  transition: background-color var(--transition-speed), transform var(--transition-speed);
+  transition: background-color 0.3s, transform 0.2s;
+  cursor: pointer;
 }
 
 button:hover {
-  background-color: var(--btn-hover-color);
-  transform: translateY(-3px);
+  background-color: var(--button-hover-color);
 }
 
-/* Animations for Button Press */
 button:active {
-  background-color: var(--accent-color);
-  box-shadow: 0 2px rgba(0,0,0,0.1);
-  transform: translateY(-1px);
+  transform: var(--button-active-transform);
 }
 
-/* Responsiveness */
+#clear {
+  background-color: #f44336;
+}
+
+#equals {
+  background-color: #2196F3;
+}
+
 @media (max-width: 600px) {
-  .calculator-body {
-    padding: 10px;
+  #calculator {
+    width: 90%;
+    padding: var(--spacing-small);
+    box-shadow: none;
+    margin: var(--spacing-small);
   }
-
-  button {
-    padding: 15px;
-  }
-}
-
-/* Transition Effects for Display Changes */
-.display {
-  transition: all 0.5s ease-in-out;
-}
-
-.display:focus-within {
-  background-color: var(--primary-color);
-  color: var(--dark-color);
 }
