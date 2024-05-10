@@ -1,9 +1,9 @@
-// src/components/Button.js
 import React from 'react';
 
-function Button({ label, onClick }) {
+// Button component receiving props for label, onClick handler, and id
+const Button = ({ label, onClick, id }) => {
   return (
-    <button className="btn btn-secondary" onClick={onClick}>
+    <button className="btn btn-secondary" id={id} onClick={onClick}>
       {label}
     </button>
   );

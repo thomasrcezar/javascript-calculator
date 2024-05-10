@@ -1,10 +1,10 @@
 // src/components/Display.js
 import React from 'react';
 
-function Display({ value }) {
+const Display = ({ value }) => {
   return (
-    <div className="display">
-      <input type="text" value={value} readOnly />
+    <div id="display" className="display">
+      {value}
     </div>
   );
 }
