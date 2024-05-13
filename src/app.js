@@ -55,15 +55,9 @@ const App = () => {
     }
     return (
         <div className="App">
-            <div className="container">
-                <div className="row justify-content-center">
-                    <div className="col-auto">
-                        <div className="calculator-body">
-                            <Display value={input || "0"} />
-                            <ButtonPanel handleButtonClick={handleButtonClick} />
-                        </div>
-                    </div>
-                </div>
+            <div id="calculator">
+                <Display value={input || "0"} />
+                <ButtonPanel handleButtonClick={handleButtonClick} />
             </div>
         </div>
     );

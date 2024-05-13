@@ -31,6 +31,7 @@ body, html {
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-strong);
   width: auto;
+  max-width: 400px;
 }
 
 #display {
@@ -53,7 +54,7 @@ button {
   background-color: var(--button-bg-color);
   border: none;
   color: var(--button-text-color);
-  padding: 15px;
+  padding: 20px;
   font-size: var(--font-size-large);
   border-radius: var(--border-radius);
   transition: background-color 0.3s, transform 0.2s;
@@ -82,5 +83,34 @@ button:active {
     padding: var(--spacing-small);
     box-shadow: none;
     margin: var(--spacing-small);
+  }
+
+  #display {
+    font-size: 1.5em;
+    padding: var(--spacing-small);
+  }
+
+  button {
+    padding: 10px;
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 400px) {
+  #calculator {
+    width: 100%;
+    padding: var(--spacing-small);
+    box-shadow: none;
+    margin: var(--spacing-small);
+  }
+
+  #display {
+    font-size: 1.2em;
+    padding: var(--spacing-small);
+  }
+
+  button {
+    padding: 8px;
+    font-size: 1em;
   }
 }

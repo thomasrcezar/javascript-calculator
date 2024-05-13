@@ -20,7 +20,7 @@ function ButtonPanel({ handleButtonClick }) {
   };
 
   return (
-    <div className="button-panel">
+    <div id="button-container">
       {createDigitButtons()}
       <Button label="+" id="add" onClick={() => handleButtonClick('+')} />
       <Button label="-" id="subtract" onClick={() => handleButtonClick('-')} />
